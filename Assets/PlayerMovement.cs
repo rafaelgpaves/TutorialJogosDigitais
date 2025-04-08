@@ -55,18 +55,21 @@ public class PlayerMovement : MonoBehaviour
     private string FormatTime() {
         string tempo = "";
         int hora = (int)(Time.timeSinceLevelLoad / 3600);
-        // if (hora >= 1) {
-        //     tempo += string.Format("{0} h, ", hora);
-        // } 
-        tempo += hora.ToString("F2") + ":";
+        if (hora < 10) {
+            tempo += "0";
+        }
+        tempo += hora.ToString("N0") + ":";
 
         int min = (int) (Time.timeSinceLevelLoad / 60);
-        // if (min >= 1 || hora >= 1) {
-        //     tempo += string.Format("{0} m, ", min);
-        // }
-        tempo += min.ToString("F2") + ":";
+        if (min < 10) {
+            tempo += "0";
+        }
+        tempo += min.ToString("N0") + ":";
 
         float s = Time.timeSinceLevelLoad % 60;
+        if (s < 10) {
+            tempo += "0";
+        }
         tempo += s.ToString("F2");
 
         return tempo;
