@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // timePassed += Time.deltaTime;
         // txtTime.text = Time.timeSinceLevelLoad.ToString("F2");
-        txtTime.text = formatTime();
+        txtTime.text = FormatTime();
     }
 
     // Update is called once per frame
@@ -52,20 +52,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private string formatTime() {
+    private string FormatTime() {
         string tempo = "";
         int hora = (int)(Time.timeSinceLevelLoad / 3600);
-        if (hora >= 1) {
-            tempo += string.Format("{0} h, ", hora);
-        } 
+        // if (hora >= 1) {
+        //     tempo += string.Format("{0} h, ", hora);
+        // } 
+        tempo += hora.ToString("F2") + ":";
 
         int min = (int) (Time.timeSinceLevelLoad / 60);
-        if (min >= 1 || hora >= 1) {
-            tempo += string.Format("{0} m, ", min);
-        }
+        // if (min >= 1 || hora >= 1) {
+        //     tempo += string.Format("{0} m, ", min);
+        // }
+        tempo += min.ToString("F2") + ":";
 
         float s = Time.timeSinceLevelLoad % 60;
-        tempo += s.ToString("F2") + " s";
+        tempo += s.ToString("F2");
 
         return tempo;
     }
