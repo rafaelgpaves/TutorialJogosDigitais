@@ -1863,6 +1863,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 403059089}
     - target: {fileID: 2800585584408219045, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800585584408219045, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800585584408219045, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800585584408219045, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.16
       objectReference: {fileID: 0}
@@ -1902,21 +1914,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2800585584408219045, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2899630282894346543, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4138042463968879455, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138042463968879455, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021134971692468109, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3713219614965599903, guid: 74b7b8ebd3df3334aab9b4e6647359bd, type: 3}
     - target: {fileID: 9021134971692468109, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
       propertyPath: m_Color.b
-      value: 0.91823894
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9021134971692468109, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
       propertyPath: m_Color.g
-      value: 0.42446887
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9021134971692468109, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
       propertyPath: m_Color.r
-      value: 0.7289986
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1931,9 +1959,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2718488755834806835, guid: 8d49310915902b4498e5cae828105f51, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6647595260939011858, guid: 8d49310915902b4498e5cae828105f51, type: 3}
       propertyPath: m_Name
       value: Inimigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331872260200693444, guid: 8d49310915902b4498e5cae828105f51, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331872260200693444, guid: 8d49310915902b4498e5cae828105f51, type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8642474105273057312, guid: 8d49310915902b4498e5cae828105f51, type: 3}
       propertyPath: m_LocalPosition.x

@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private AudioSource auds;
     private int numTriangulos;
     static public int dinheiro;
     public float speed;
+    private bool foiParaEsquerda;
     public TextMeshProUGUI txtNumTriangulos;
     public TextMeshProUGUI txtDinheiro;
     public GameObject triangulo;
@@ -18,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         auds = GetComponent<AudioSource>();
         numTriangulos = 0;
         dinheiro = 0;
@@ -32,6 +35,15 @@ public class PlayerMovement : MonoBehaviour
       Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
       rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);  
+
+      if (movement.x < 0f) {
+        foiParaEsquerda = true;
+        sr.flipX = true;
+      }
+      else if (movement.x > 0.1f) {
+        foiParaEsquerda = false;
+        sr.flipX = false;
+      }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

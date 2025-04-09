@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2800585584408219045}
   - component: {fileID: 9021134971692468109}
   - component: {fileID: 4138042463968879455}
-  - component: {fileID: 3101819383047676808}
+  - component: {fileID: 6940975614078452658}
   - component: {fileID: 2340159395216140249}
   - component: {fileID: -614113157198888232}
   m_Layer: 0
@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.94716984, g: 0.36993232, b: 0.39220348, a: 1}
+  m_Sprite: {fileID: 3713219614965599903, guid: 74b7b8ebd3df3334aab9b4e6647359bd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118,8 +118,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &3101819383047676808
-CircleCollider2D:
+--- !u!70 &6940975614078452658
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,7 +153,8 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Size: {x: 0.25, y: 0.29}
+  m_Direction: 0
 --- !u!114 &2340159395216140249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  txt: {fileID: 0}
+  txtNumTriangulos: {fileID: 0}
+  txtDinheiro: {fileID: 0}
+  triangulo: {fileID: 0}
 --- !u!82 &-614113157198888232
 AudioSource:
   m_ObjectHideFlags: 0
