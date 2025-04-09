@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ItemSpawner : MonoBehaviour
 {
-    private AudioSource auds;
     public float minDistance;
     private float ultimoX;
     private float ultimoY;
@@ -16,7 +15,6 @@ public class ItemSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        auds = GetComponent<AudioSource>();
         ultimoX = 0f;
         ultimoY = 0f;
         maxItems = 4;
@@ -29,9 +27,9 @@ public class ItemSpawner : MonoBehaviour
 
     void Update()
     {
-        while (triangulos.Count < maxItems) {
-            SpawnTriangle();
-        }
+        // while (triangulos.Count < maxItems) {
+        //     SpawnTriangle();
+        // }
     }
 
     // Update is called once per frame
