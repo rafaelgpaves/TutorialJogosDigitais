@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class EnemyMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private float moveHorizontal;
     private float moveVertical;
     public float speed;
@@ -17,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         moveHorizontal = 1f;
         moveVertical = 0f;
         ultimoTempoSubida = 0f;
@@ -27,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (TimeManager.tempoPassado > tempoSeguir) {
             rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime));
+            sr.flipX = player.transform.position.x < transform.position.x;
         } else {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
             rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);  
@@ -42,10 +45,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Parede")) {
             speed *= -1;
+            sr.flipX = speed < 0f;
         }
-    }
-
-    void IncreaseSpeed() {
-        speed += 10;
     }
 }
