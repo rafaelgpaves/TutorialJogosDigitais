@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private AudioSource auds;
     private int numTriangulos;
-    static private int dinheiro;
+    static public int dinheiro;
     public float speed;
     public TextMeshProUGUI txtNumTriangulos;
     public TextMeshProUGUI txtDinheiro;
