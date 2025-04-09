@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     public float speed;
+    public GameObject player;
+    public float tempoSeguir; // apos esse tempo (em segundos), inmigo passa a te seguir
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,9 +22,12 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-        rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);  
+        if (PlayerMovement.GetTempo() > tempoSeguir) {
+            rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime));
+        } else {
+            Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+            rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);  
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

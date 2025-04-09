@@ -88,4 +88,8 @@ public class PlayerMovement : MonoBehaviour
 
         return tempo;
     }
+
+    static public int GetTempo() {
+        return (int) Time.timeSinceLevelLoad;
+    }
 }

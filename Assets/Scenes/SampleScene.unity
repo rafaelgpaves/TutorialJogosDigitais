@@ -1615,6 +1615,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1518656668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2899630282894346543, guid: dde8ed9b4ce7f70438badacf9e7b2c01, type: 3}
+  m_PrefabInstance: {fileID: 4904333348531639731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1558517928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,6 +1929,18 @@ PrefabInstance:
     - target: {fileID: 8642474105273057312, guid: 8d49310915902b4498e5cae828105f51, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682117092734307171, guid: 8d49310915902b4498e5cae828105f51, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682117092734307171, guid: 8d49310915902b4498e5cae828105f51, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1518656668}
+    - target: {fileID: 8682117092734307171, guid: 8d49310915902b4498e5cae828105f51, type: 3}
+      propertyPath: tempoSeguir
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
