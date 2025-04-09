@@ -6,10 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private AudioSource auds;
-    private int score;
-    // private float timePassed;
+    private int numTriangulos;
+    private int dinheiro;
     public float speed;
-    public TextMeshProUGUI txt;
+    public TextMeshProUGUI txtNumTriangulos;
+    public TextMeshProUGUI txtDinheiro;
     public TextMeshProUGUI txtTime;
     public GameObject triangulo;
 
@@ -18,14 +19,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         auds = GetComponent<AudioSource>();
-        score = 0;
-        // timePassed = 0;
+        numTriangulos = 0;
+        dinheiro = 0;
     }
 
     void Update()
     {
-        // timePassed += Time.deltaTime;
-        // txtTime.text = Time.timeSinceLevelLoad.ToString("F2");
         txtTime.text = FormatTime();
     }
 
@@ -47,8 +46,15 @@ public class PlayerMovement : MonoBehaviour
 
             Instantiate(triangulo, new(Random.Range(-6.5f, 6.5f), Random.Range(-3.5f, 3.5f), 0f), Quaternion.identity);
 
-            score += 1;
-            txt.text = string.Format("Pontuação: {0}", score);
+            numTriangulos += 1;
+            txtNumTriangulos.text = string.Format("{0}", numTriangulos);
+        }
+
+        if (other.CompareTag("Loja")) {
+            dinheiro += numTriangulos;
+            txtDinheiro.text = string.Format("Dinheiro: {0}$", dinheiro);
+            numTriangulos = 0;
+            txtNumTriangulos.text = string.Format("{0}", numTriangulos);
         }
     }
 
