@@ -8,11 +8,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private AudioSource auds;
     private int numTriangulos;
-    private int dinheiro;
+    static private int dinheiro;
     public float speed;
     public TextMeshProUGUI txtNumTriangulos;
     public TextMeshProUGUI txtDinheiro;
-    public TextMeshProUGUI txtTime;
     public GameObject triangulo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,11 +21,6 @@ public class PlayerMovement : MonoBehaviour
         auds = GetComponent<AudioSource>();
         numTriangulos = 0;
         dinheiro = 0;
-    }
-
-    void Update()
-    {
-        txtTime.text = FormatTime();
     }
 
     // Update is called once per frame
@@ -66,30 +60,4 @@ public class PlayerMovement : MonoBehaviour
         }   
     }
 
-    private string FormatTime() {
-        string tempo = "";
-        int hora = (int)(Time.timeSinceLevelLoad / 3600);
-        if (hora < 10) {
-            tempo += "0";
-        }
-        tempo += hora.ToString("N0") + ":";
-
-        int min = (int) (Time.timeSinceLevelLoad / 60);
-        if (min < 10) {
-            tempo += "0";
-        }
-        tempo += min.ToString("N0") + ":";
-
-        float s = Time.timeSinceLevelLoad % 60;
-        if (s < 10) {
-            tempo += "0";
-        }
-        tempo += s.ToString("F2");
-
-        return tempo;
-    }
-
-    static public int GetTempo() {
-        return (int) Time.timeSinceLevelLoad;
-    }
 }

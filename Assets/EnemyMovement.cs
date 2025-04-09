@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (PlayerMovement.GetTempo() > tempoSeguir) {
+        if (TimeManager.tempoPassado > tempoSeguir) {
             rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime));
         } else {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
