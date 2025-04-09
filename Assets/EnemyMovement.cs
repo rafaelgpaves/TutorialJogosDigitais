@@ -22,7 +22,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
-        // transform.position += transform.position + speed * Time.fixedDeltaTime * movement.normalized;
         rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);  
     }
 

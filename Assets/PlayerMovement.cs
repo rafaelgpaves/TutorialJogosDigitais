@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -56,6 +57,13 @@ public class PlayerMovement : MonoBehaviour
             numTriangulos = 0;
             txtNumTriangulos.text = string.Format("{0}", numTriangulos);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Inimigo")) {
+            SceneManager.LoadSceneAsync(2);
+        }   
     }
 
     private string FormatTime() {
