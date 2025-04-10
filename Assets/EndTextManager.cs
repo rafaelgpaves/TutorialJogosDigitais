@@ -9,12 +9,6 @@ public class EndTextManager : MonoBehaviour
     void Awake()
     {
         string tempo = "";
-        int hora = (int)(TimeManager.tempoPassado / 3600);
-        if (hora < 10) {
-            tempo += "0";
-        }
-        tempo += hora.ToString("N0") + ":";
-
         int min = (int) (TimeManager.tempoPassado / 60);
         if (min < 10) {
             tempo += "0";

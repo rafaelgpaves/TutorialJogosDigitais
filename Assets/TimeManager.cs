@@ -21,12 +21,6 @@ public class TimeManager : MonoBehaviour
     private string FormatTime() {
         tempoPassado = Time.timeSinceLevelLoad;
         string tempo = "";
-        int hora = (int)(tempoPassado / 3600);
-        if (hora < 10) {
-            tempo += "0";
-        }
-        tempo += hora.ToString("N0") + ":";
-
         int min = (int) (tempoPassado / 60);
         if (min < 10) {
             tempo += "0";
