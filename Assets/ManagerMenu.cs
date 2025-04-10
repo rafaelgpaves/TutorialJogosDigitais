@@ -11,4 +11,15 @@ public class ManagerMenu : MonoBehaviour
     public void PlayGame() {
         SceneManager.LoadSceneAsync(1);
     }
+
+    void Update()
+    {
+        if (Input.GetAxisRaw("Fire1") > 0) {
+            SceneManager.LoadSceneAsync(1);
+        }
+
+        if (Input.GetAxisRaw("Fire2") > 0) {
+            SceneManager.LoadSceneAsync(0);
+        }
+    }
 }
