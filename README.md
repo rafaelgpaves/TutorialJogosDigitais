@@ -11,9 +11,9 @@ O objetivo do jogo é coletar o máximo de poções possíveis e colocá-las em 
 - [x] 2.1. Mecânica de Tempo (200 Pontos)
 - [x] 2.1.1. Adicionar um cronômetro
 - [x] 2.1.2. Mostrar o tempo final ao término da partida
-- [x] 2.1.3. Utilizar o tempo como mecânica dentro do jogo
+- [x] 2.1.3. Utilizar o tempo como mecânica dentro do jogo ==> inimigos ficam mais rápidos e aparecem mais inimigos
 - [x] 2.2. Inimigos (150 Pontos)
-- [x] 2.2.1. Implementar inimigos que se movam em direções pré-determinadas ou estejam parados, mas que causem algum impacto ao jogador Fazer com que os inimigos sigam o jogador ou tenham um comportamento variável (patrulha, perseguição).
+- [x] 2.2.1. Implementar inimigos que se movam em direções pré-determinadas ou estejam parados, mas que causem algum impacto ao jogador Fazer com que os inimigos sigam o jogador ou tenham um comportamento variável (patrulha, perseguição) ==> inimigos começam se mexendo de um lado para outro. Depois de um tempo determinado, começam a seguir o jogador
 - [x] 2.3. Visual: (75 Pontos)
 - [x] 2.3.1. Trocar a cor dos sprites básicos
 - [x] 2.3.2. Usar assets de sprites de forma coerente
@@ -21,16 +21,14 @@ O objetivo do jogo é coletar o máximo de poções possíveis e colocá-las em 
 - [x] 2.4.1. Adicionar música ao seu jogo
 - [x] 2.4.2. Adicionar diferentes elementos sonoros
 - [x] 2.5. UI: (100 Pontos)
-- [x] 2.5.1. Exibir o score do jogador e o tempo atual na interface durante o
-- [x] jogo.
-- [x] 2.5.2. Mostrar outras informações importantes para o jogador (Vida,
-- [x] Stamina, etc)
+- [x] 2.5.1. Exibir o score do jogador e o tempo atual na interface durante o jogo.
+- [x] 2.5.2. Mostrar outras informações importantes para o jogador (Vida, Stamina, etc) ==> quantidade de poções coletadas (mas não colocadas no portal)
 - [x] 2.6. Controles: (50 Pontos)
 - [x] 2.6.1. Adicionar suporte a joystick/controle xbox
 - [x] 2.7. Level Design: (150 Pontos)
-- [x] 2.7.1. Ajustar o jogo a algum tema
-- [x] 2.7.2. Criar uma nova arena ou modificar a arena básica
-- [x] 2.7.3. Adicionar novos desafios para o jogador
+- [x] 2.7.1. Ajustar o jogo a algum tema ==> fantasia mágica
+- [x] 2.7.2. Criar uma nova arena ou modificar a arena básica ==> água com hitbox própria nos cantos
+- [x] 2.7.3. Adicionar novos desafios para o jogador ==> portal
 
 - [x] 3.1. Tem Menu Inicial
 - [x] 3.1.1. Menu coerente com o jogo
