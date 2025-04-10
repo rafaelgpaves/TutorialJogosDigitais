@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private float moveVertical;
     public float speed;
     public GameObject player;
+    private float ultimoTempoSeguir;
     public float tempoSeguir; // apos esse tempo (em segundos), inmigo passa a te seguir
     private float ultimoTempoSubida;
     public float tempoSubida; // apos esse tempo (sem segundos), inimigo aumenta velocidade
@@ -21,15 +22,17 @@ public class EnemyMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         moveHorizontal = 1f;
         moveVertical = 0f;
-        ultimoTempoSubida = 0f;
+        ultimoTempoSeguir = TimeManager.tempoPassado;
+        ultimoTempoSubida = TimeManager.tempoPassado;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (TimeManager.tempoPassado > tempoSeguir) {
+        if (TimeManager.tempoPassado - ultimoTempoSeguir > tempoSeguir) {
             rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime));
             sr.flipX = player.transform.position.x < transform.position.x;
+            sr.color = new Color(255/255, 138/255, 84/255);
         } else {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
             rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);  
