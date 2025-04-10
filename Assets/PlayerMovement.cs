@@ -8,10 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private AudioSource auds;
+    public AudioClip somColeta;
+    public AudioClip somVenda;
     private int numTriangulos;
     static public int dinheiro;
     public float speed;
-    private bool foiParaEsquerda;
     public TextMeshProUGUI txtNumTriangulos;
     public TextMeshProUGUI txtDinheiro;
     public GameObject triangulo;
@@ -37,18 +38,16 @@ public class PlayerMovement : MonoBehaviour
       rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);  
 
       if (movement.x < 0f) {
-        foiParaEsquerda = true;
         sr.flipX = true;
       }
       else if (movement.x > 0.1f) {
-        foiParaEsquerda = false;
         sr.flipX = false;
       }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Coletavel")) {
-            auds.Play();
+            auds.PlayOneShot(somColeta);
             Destroy(other.gameObject);
 
             Instantiate(triangulo, new(Random.Range(-6.5f, 6.5f), Random.Range(-3.5f, 3.5f), 0f), Quaternion.identity);
@@ -62,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             txtDinheiro.text = string.Format("Dinheiro: {0}$", dinheiro);
             numTriangulos = 0;
             txtNumTriangulos.text = string.Format("{0}", numTriangulos);
+            auds.PlayOneShot(somVenda, 0.5f);
         }
     }
 
