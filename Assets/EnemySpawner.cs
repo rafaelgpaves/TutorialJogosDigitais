@@ -10,13 +10,11 @@ public class EnemySpawner : MonoBehaviour
     void Awake()
     {
         ultimoSpawn = 0.1f;
-        Debug.Log($"{TimeManager.tempoPassado} ----> {ultimoSpawn}");
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        Debug.Log($"{TimeManager.tempoPassado} ----- {ultimoSpawn}");
         if (TimeManager.tempoPassado - ultimoSpawn > minTempoSpawn) {
             GameObject i = Instantiate(inimigo, new Vector2(transform.position.x + 0.5f, transform.position.y), Quaternion.identity);
             EnemyMovement em = i.GetComponent<EnemyMovement>();
