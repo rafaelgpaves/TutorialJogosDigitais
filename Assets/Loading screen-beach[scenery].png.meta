@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Loading screen-beach[scenery]_0: -2459643499043385695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
